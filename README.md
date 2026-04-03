@@ -1,40 +1,113 @@
-# Driving-Safety-System
-A smart driver safety system that detects drowsiness and sends real-time alerts with location to prevent accidents.
-# 🚗 Drowsy Driving Safety System
+🚗 Driving Safety System (Drowsy Driver Detection)
 
-## 📌 About
-This project is a smart driver safety system designed to prevent accidents caused by driver drowsiness. It monitors the driver's face using a camera and detects sleep by analyzing eye closure.
+📌 Overview
 
-If the driver closes their eyes for a few seconds, the system gives an alert sound. If the driver does not respond, it sends an emergency SMS alert to a predefined mobile number.
+The Driving Safety System is a real-time computer vision-based project designed to detect driver drowsiness and prevent accidents.
+It continuously monitors the driver’s eyes using a webcam and triggers alerts when signs of sleepiness are detected.
 
-## 🚀 Features
-- Real-time face detection
-- Eye closure detection
-- Instant alert sound
-- Sends emergency SMS alert
-- Works in low network conditions
-- Suitable for long-distance drivers
+In addition, the system sends an emergency SMS alert with location details using the Twilio API, ensuring immediate response in critical situations.
 
-## 🛠️ Technologies Used
+---
+
+🎯 Purpose
+
+- To reduce road accidents caused by driver fatigue
+- To provide real-time alert mechanisms for safety
+- To notify emergency contacts using SMS alerts
+- To build a smart and practical AI-based safety system
+
+---
+
+🚀 Features
+
+- 😴 Real-time drowsiness detection using Eye Aspect Ratio (EAR)
+- 🔊 Alarm sound alert when eyes remain closed
+- 📱 Sends SMS alert using Twilio API
+- 🌍 Shares live location via Google Maps link
+- 🎥 Live video processing using OpenCV
+- ⚡ Fast and efficient performance
+
+---
+
+🛠️ Technologies Used
+
 - Python
 - OpenCV
-- NumPy
+- MediaPipe
+- Twilio API
+- Playsound
 
-## ▶️ How it Works
-1. Detects face using camera
-2. Monitors eye movement
-3. If eyes closed → alert sound
-4. No response → send SMS alert
+---
 
-## 💡 Why SMS Instead of Email
-SMS alerts are used instead of email because SMS works even with low network signal and does not require internet connection. This makes it more reliable for real-time emergency situations, especially for drivers traveling in remote areas.
+⚙️ How It Works
 
-## ▶️ How to Run
-1. Install libraries:
-   pip install opencv-python numpy
+1. Webcam captures live video of the driver
+2. Face and eye landmarks are detected
+3. Eye Aspect Ratio (EAR) is calculated
+4. If EAR falls below a threshold:
+   - Alarm sound is triggered 🔊
+   - SMS alert is sent 📱
+5. Location is shared via Google Maps link
 
-2. Run:
-   python main.py
+---
 
-## 🙋‍♂️ Author
+▶️ How to Run
+
+1. Clone the repository:
+
+git clone https://github.com/your-username/Driving-Safety-System.git
+
+2. Install required libraries:
+
+pip install -r requirements.txt
+
+3. Add your Twilio credentials in the code:
+
+account_sid = "YOUR_TWILIO_ACCOUNT_SID"
+auth_token = "YOUR_TWILIO_AUTH_TOKEN"
+twilio_number = "YOUR_TWILIO_NUMBER"
+my_number = "YOUR_PHONE_NUMBER"
+
+4. Run the project:
+
+python main.py
+
+---
+
+📂 Project Structure
+
+- "main.py" → Main execution file
+- "sleep_detection.py" → Drowsiness detection logic
+- "drive mainpro.py" → Integrated system with alert + SMS
+- "alarm.mp3" → Alarm sound file
+- "README.md" → Project documentation
+
+---
+
+📸 Output
+
+- Detects eye closure in real time
+- Alerts driver with alarm sound
+- Sends SMS notification with location
+
+---
+
+🔮 Future Enhancements
+
+- Mobile app integration for alerts
+- AI model improvement using deep learning
+- Driver performance tracking system
+- Integration with vehicle systems
+
+---
+
+⚠️ Security Note
+
+Do not upload your real Twilio Account SID and Auth Token to GitHub.
+Always keep your credentials secure.
+
+---
+
+👨‍💻 Author
+
 DHANALAKSHMI
